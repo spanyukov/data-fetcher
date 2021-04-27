@@ -32,7 +32,6 @@ export class PostgresDbReqResUserRepository implements IReqResUserRepository {
             (id, email, first_name, last_name, avatar) values (:id, :email, :firstName, :lastName, :avatar) ON CONFLICT (id) DO NOTHING;`;
         }
         const queryBuilder = await this.getQueryBuilder();
-        console.log(req);
         const query = queryBuilder?.raw(sql, {
             id: req.id,
             email: req.email,

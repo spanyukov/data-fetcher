@@ -48,8 +48,6 @@ export class PostgresDbAffluDateRepository implements IAffluDateRepository {
             impressions: req.impressions,
             cr: req.cr
         });
-        console.log(req);
-        console.log(query.toString());
 
         return !! await query;
     }
